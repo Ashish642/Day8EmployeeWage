@@ -1,14 +1,13 @@
 package com.bridgelab;
+import java.util.ArrayList;
 
 public class EmployeeWage implements ComputeWage{
     public static final int isPartTime =0;
-    public static final int isfullTime = 1;
-    private int numOfCompany;
-    private CompanyEmpWage empWageArray[];
+    public static final int isFullTime = 1;
+    private ArrayList<CopanyEmpWage> empList;
 
    public EmployeeWage() {
-       empWageArray = new CompanyEmpWage[5];
-
+       empList = new ArrayList<>();
 
    }
     private void addCompanyEmpWage(String company, int empRatePerHour,int numOfWorkingDays, int maximumHoursPerMonth){
@@ -17,7 +16,9 @@ public class EmployeeWage implements ComputeWage{
     }
     private void computeEmpWage() {
        for (int i = 0; i<numOfCompany;i++){
-           System.out.println(empWageArray[i]);
+           empList.get(i).setTotalEmpWage(this.coputeEmpWage(empList.get(i)));
+           System.out.println(empList.get(i));
+           
 
        }
     }
