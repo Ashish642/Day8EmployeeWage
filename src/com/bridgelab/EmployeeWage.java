@@ -1,6 +1,6 @@
 package com.bridgelab;
 
-public class EmployeeWage {
+public class EmployeeWage implements ComputeWage{
     public static final int isPartTime =0;
     public static final int isfullTime = 1;
     private int numOfCompany;
